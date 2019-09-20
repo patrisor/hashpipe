@@ -1,0 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    start_server                                       :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: patrisor <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/15 20:34:36 by patrisor          #+#    #+#              #
+#    Updated: 2019/06/15 22:52:39 by patrisor         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+#!/bin/bash
+if [ "$#" -ne 1 ];
+then
+	echo "usage: ./start_server [PORT_NUMBER]"
+else
+	LINK=localhost:$1
+	open -a Safari http://$LINK
+	php -S $LINK
+fi;
